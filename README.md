@@ -156,7 +156,7 @@ most cases.
 - Your program doesn't have to block on a slow network call, your program can be doing other things. This is the foundation of AJAX
 - highly successful model for web servers. This is how nodejs and nginx handle massive scale.
 
-## conclusion
+## recap
 
 So this is what we have realized so far:
 
@@ -166,3 +166,12 @@ So this is what we have realized so far:
 - Parallelism: Making progress in parallel.
 - locking: avoid
 - Parallelism implies Concurrency. But Concurrency doesn’t always mean Parallelism.
+
+## Conclusion
+| feature library | threading | multiprocessing | asyncio |
+|------------------------|-----------------------------------------|-------------------|--------------------------------------------------|
+| scheduling | preemptive | preemptive | cooperative |
+| use multiple CPUs | no | yes | no |
+| scalability | medium (100s) | low (10s) | high (1000s) |
+| use blocking functions | yes | yes | no |
+| when to use | Existing codebase, I/O bound, blocking calls | CPU bound tasks |New codebase, I/O bound, large scale |
